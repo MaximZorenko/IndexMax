@@ -2,146 +2,368 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
-  <link rel="stylesheet" href="css/styleDark.css">
-  <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
-	<title>Dark</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Lucid</title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="libs/bootstrap4/bootstrap.css">
+	<link rel="stylesheet" href="libs/aveson/all.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header class="dark--header">
-	<div class="dark--header__menu">
-		<nav class="dark--header__navContainer">
-			<div class="dark--header__nav--logo">
-				<a href="#"><img src="img/headerLogo.png" alt="logo"></a>
+
+<header class="lucid-header">
+	<div class="container container--flex">
+		<div class="row">
+			<div class="col-md-12">
+				<nav class="navbar navbar-expand-lg navbar-light">
+				  <img class="navbar-brand" src="img/logo.png" alt="logo">
+				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				    <span class="navbar-toggler-icon"></span>
+				  </button>
+
+				  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+				    <ul class="navbar-nav mr-auto">
+				      <li class="nav-item">
+				        <a class="nav-link" href="#">home</a>
+				      </li>
+				      <li class="nav-item">
+				        <a class="nav-link" href="#">features</a>
+				      </li>
+				      <li class="nav-item">
+				        <a class="nav-link" href="#">about</a>
+				      </li>
+				      <li class="nav-item">
+				        <a class="nav-link" href="#">testimonials</a>
+				      </li>
+				      <li class="nav-item">
+				        <a class="nav-link" href="#">pricing</a>
+				      </li>
+				      <li class="nav-item">
+				        <a class="nav-link" href="#">contact</a>
+				    </ul>
+				  </div>
+				</nav>
 			</div>
-			<ul class="dark--header__nav--ul">
-				<li>
-					<a href="#">Home</a>
-				</li>
-				<li>
-					<a href="#">Services</a>
-				</li>
-				<li>
-					<a href="#">Portfolio</a>
-				</li>
-				<li>
-					<a href="#">Pricing</a>
-				</li>
-				<li>
-					<a href="#">About</a>
-				</li>
-				<li>
-					<a href="#">Contact</a>
-				</li>
-				<li>
-					<button type="button" class="button"></button>
-					<form action="#" method="post" name="headerMenu">
-						<input type="text" name="name">
-						<input type="submit" value="">
-					</form>
-				</li>
-			</ul>
-		</nav>
-	</div>
-	
-	<div class="dark--header__slider"  data-stellar-background-ratio="0.5">
-		<div class="dark--header__container">
-			<div class="dark--header__slider--indicators">
-				<div class="slider--indicator"></div>
-				<div class="slider--indicator"></div>
-				<div class="slider--indicator"></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 col-md-12 col-lg-6">
+				<div class="lucid-header__item--left">
+					<span>introdocin g lucid theme</span>
+					<h1>Carefully crafted and beautiful landing page.</h1>
+					<p>
+						Etiam ullamcorper et turpis eget hendrerit. Praesent varius risus mi, at elementum magna ultricies accumsan. Cras venenatis lacus sed dolor placerat tempus. Morbi blandit at neque ut imperdiet.
+					</p>
+					<button class="btn btn-b">dowload now</button>
+					<button class="btn btn-b">view features</button>																	
+				</div>
 			</div>
-			<div class="dark--header__slider--scrol">
-				<div class="slider--scrol"></div>
-				<div class="slider--scrol"></div>
-			</div>
-			<div class="dark--header__slider--list">
-				<h2>Welcome to Parallels #1</h2>
-				<span>Clean Responsive Parallax Theme</span>
-			</div>
-			<div class="dark--header__slider--list">
-				<h2>Welcome to Parallels #2</h2>
-				<span>Clean Responsive Parallax Theme</span>
-			</div>
-			<div class="dark--header__slider--list">
-				<h2>Welcome to Parallels #3</h2>
-				<span>Clean Responsive Parallax Theme</span>
-			</div>
-			<div class="dark--header__slider--icon">
-				<img src="img/slider2.png" alt="icons" class="slider--icon">
-				<img src="img/slider3.png" alt="icons" class="slider--icon">
-				<img src="img/slider4.png" alt="icons" class="slider--icon">
-				<img src="img/slider5.png" alt="icons" class="slider--icon">
-				<img src="img/slider7.png" alt="icons" class="slider--icon">
-				<img src="img/slider8.png" alt="icons" class="slider--icon">
-				<img src="img/slider9.png" alt="icons" class="slider--icon">
+			<div class="col-sm-12 col-md-12 col-lg-6">
+				<div class="lucid-header__item--right">
+					<img src="img/tel.png" alt="tel">
+				</div>	
 			</div>
 		</div>
 	</div>
 </header>
-
 <main>
-	<section class="dark--portfolio">
-		<div class="dark--portfolio__container">
-			<h3>Portfolio</h3>
-			<div class="dark--portfolio__wrapper">
-				
-				<div class="wrapper__items">
-					<img src="img/webmaster.jpg" alt="webmaster">
-					<a href="webmaster/index.html">Посмотреть</a>
+	<div class="lucid-features">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<span class="span-blue">product dverview</span>
+					<h2>List of amazing features</h2>
 				</div>
-				<div class="wrapper__items">
-					<img src="img/gllacy-min.jpg" alt="portfolio">
-					<a href="gllacy/index.html">Посмотреть</a>
+				<div class="col-md-3">
+					<div class="lucid-features__item">
+						<img src="img/features--icon1.png" alt="icon">
+						<h3>Responsive</h3>
+						<p>
+							Fusce fermentum placeerat magna ac pharetra. Aliquam euismode elit non ipsum lacinia consectetur. 
+						</p>
+					</div>
 				</div>
-				<div class="wrapper__items">
-					<img src="img/pink-min.jpg" alt="portfolio">
-					<a href="pink/index.html">Посмотреть</a>
+				<div class="col-md-3">
+					<div class="lucid-features__item">
+						<img src="img/features--icon2.png" alt="icon">
+						<h3>Costomizable</h3>
+						<p>
+							Fusce fermentum placeerat magna ac pharetra. Aliquam euismode elit non ipsum lacinia consectetur. 
+						</p>
+					</div>
 				</div>
-				<div class="wrapper__items">
-					<img src="img/part-min.jpg" alt="portfolio">
-					<a href="part/index.html">Посмотреть</a>
+				<div class="col-md-3">
+					<div class="lucid-features__item">
+						<img src="img/features--icon3.png" alt="icon">
+						<h3>Loveli design</h3>
+						<p>
+							Fusce fermentum placeerat magna ac pharetra. Aliquam euismode elit non ipsum lacinia consectetur. 
+						</p>
+					</div>
 				</div>
-				<div class="wrapper__items">
-					<img src="img/event-min.jpg" alt="portfolio">
-					<a href="event/index.html">Посмотреть</a>
-				</div>
-				<div class="wrapper__items">
-					<img src="img/sedona-index-tablet.jpg" alt="portfolio">
-					<a href="sedora/index.html">Посмотреть</a>
-				</div>
-				<div class="wrapper__items">
-					<img src="Gratia/img/Gratia-main_page.jpg" alt="portfolio">
-					<a href="Gratia/index.html">Посмотреть</a>
-				</div>
-				<div class="wrapper__items">
-					<img src="#" alt="portfolio">
-					<a href="#">Посмотреть</a>
-				</div>
-				<div class="wrapper__items">
-					<img src="#" alt="portfolio">
-					<a href="#">Посмотреть</a>
+				<div class="col-md-3">
+					<div class="lucid-features__item">
+						<img src="img/features-icon4.png" alt="icon">
+						<h3>Mobile Frindly</h3>
+						<p>
+							Fusce fermentum placeerat magna ac pharetra. Aliquam euismode elit non ipsum lacinia consectetur. 
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>
-	</section>
-</main>
+	</div>
 
-<footer class="dark--footer">
-	<div class="dark--footer__container">
-		<div class="dark--footer__logo">
-			<a href="#"><img src="img/headerLogo.png" alt="logo"></a>
-		</div>
-		<div class="dark--footer__contact">
-			<span>+(380) 955 141 544</span>
-			<a href="http://indexmax.dominus.dp.ua/">indexmax.dominus.dp.ua</a>
+	<div class="lucid-about">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="lucid-about__item--left">
+						<img src="img/lucid-features-mob.jpg" alt="alt">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="lucid-about__item--right">
+						<span class="span-blue">product dverview</span>
+						<h2>List of amazing features</h2>
+						<p>
+							Duis sed odio sit amet nibh fulputate cursur a sit mauris. Morbi accumsan ipsum velit. nnam nec tllus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit.
+						</p>
+						<div class="span-about">
+							<span>Awesome disegn</span>
+							<span>Full responsive</span>
+							<span>Retine ready</span>
+							<span>Tons of features and easy to use</span>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
+
+	<div class="lucid-testimonials">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<span class="span-blue">product dverview</span>
+					<h2>Pricings & Plans</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+				 <div class="lucid-carusel">
+					<div class="bd-example">
+					  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+					    <ol class="carousel-indicators">
+					      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+					      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+					      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+					    </ol>
+					    <div class="carousel-inner">
+					      <div class="carousel-item active">
+									<div class="wrap-carousel">
+										 <div class="wrap-carousel__text">
+												<p>
+													Once upon a time all the Rivers combinet to protest agains the action of the Sea in making their waters salt. "When we come to you," said then to the Seo.
+												</p>
+												<div class="text-span span-after1">
+													<span>Jon Doe</span>
+													<span>CEO, THE RIVERS</span>
+												</div>
+				        		 </div>
+						         <div class="wrap-carousel__text">
+							          <p>
+							          	Once upon a time all the Rivers combinet to protest agains the action of the Sea in making their waters salt. "When we come to you," said then to the Seo.
+							          </p>
+							          <div class="text-span span-after2">
+													<span>Jon Doe</span>
+													<span>CEO, THE RIVERS</span>
+												</div>
+						        </div>
+									</div>		
+					       
+					      </div>
+					      <div class="carousel-item">
+				        	<div class="wrap-carousel">
+										 <div class="wrap-carousel__text">
+												<p>
+													Once upon a time all the Rivers combinet to protest agains the action of the Sea in making their waters salt. "When we come to you," said then to the Seo.
+												</p>
+												<div class="text-span span-after1">
+													<span>Jon Doe</span>
+													<span>CEO, THE RIVERS</span>
+												</div>
+				        		 </div>
+						         <div class="wrap-carousel__text">
+							          <p>
+							          	Once upon a time all the Rivers combinet to protest agains the action of the Sea in making their waters salt. "When we come to you," said then to the Seo.
+							          </p>
+							          <div class="text-span span-after2">
+													<span>Jon Doe</span>
+													<span>CEO, THE RIVERS</span>
+												</div>
+						        </div>
+									</div>
+					      </div>
+					      <div class="carousel-item">
+			      	 		<div class="wrap-carousel">
+										 <div class="wrap-carousel__text">
+												<p>
+													Once upon a time all the Rivers combinet to protest agains the action of the Sea in making their waters salt. "When we come to you," said then to the Seo.
+												</p>
+												<div class="text-span span-after1">
+													<span>Jon Doe</span>
+													<span>CEO, THE RIVERS</span>
+												</div>
+				        		 </div>
+						         <div class="wrap-carousel__text">
+							          <p>
+							          	Once upon a time all the Rivers combinet to protest agains the action of the Sea in making their waters salt. "When we come to you," said then to the Seo.
+							          </p>
+							          <div class="text-span span-after2">
+													<span>Jon Doe</span>
+													<span>CEO, THE RIVERS</span>
+												</div>
+						        </div>
+									</div>
+					      </div>
+					    </div>
+					<!--     <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+					      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					      <span class="sr-only">Previous</span>
+					    </a>
+					    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+					      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+					      <span class="sr-only">Next</span>
+					    </a> -->
+					  </div>
+					</div>
+
+
+
+
+				 </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="lucid-catcher">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<p><span>Like what you see?</span> Get this great theme now!
+					</p>
+				</div>
+				<div class="col-md-4">
+					<div class="lucid-catcher__btn">
+						<button class="btn btn-b">dowload now</button>
+						<button class="btn btn-b">view features</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="lucid-pricings">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<span class="span-blue">qality has its price</span>
+					<h2>Pricings & Plas</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3">
+					<div class="lucid-pricings__card">
+						<div class="lucid-pricings__card--box">
+							<b>free</b>
+							<div class="text">
+								<span>0</span> <p>/pre mont</p>
+							</div>
+							<p>
+								Fusce fermentum placerat magna ac pharetra.
+								Aliquam euismod elit non ipsum lacinia consectetur.
+							</p>
+							<button class="btn btn-b">order now</button>
+						</div>
+						<div class="lucid-pricings__card--box__back">
+							<p>your contact</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="lucid-pricings__card">
+						<div class="lucid-pricings__card--box">
+							<b>personal</b>
+							<div class="text">
+								<span>25</span><p>/pre mont</p>
+							</div>
+							<p>
+								Fusce fermentum placerat magna ac pharetra.
+								Aliquam euismod elit non ipsum lacinia consectetur.
+							</p>
+							<button class="btn btn-b">order now</button>
+						</div>
+						<div class="lucid-pricings__card--box__back">
+							<p>your contact</p>
+						</div>	
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="lucid-pricings__card">
+						<div class="lucid-pricings__card--box">
+							<b>bussines</b>
+							<div class="text">
+								<span>50</span><p>/pre mont</p>
+							</div>
+							<p>
+								Fusce fermentum placerat magna ac pharetra.
+								Aliquam euismod elit non ipsum lacinia consectetur.
+							</p>
+							<button class="btn btn-b">order now</button>
+						</div>
+						<div class="lucid-pricings__card--box__back">
+							<p>your contact</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="lucid-pricings__card">
+						<div class="lucid-pricings__card--box">
+							<b>ultimate</b>
+							<div class="text">
+								<span>90</span><p>/pre mont</p>
+							</div>
+							<p>
+								Fusce fermentum placerat magna ac pharetra.
+								Aliquam euismod elit non ipsum lacinia consectetur.
+							</p>
+							<button class="btn btn-b">order now</button>	
+						</div>
+						<div class="lucid-pricings__card--box__back">
+							<p>your contact</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</main>
+
+
+
+
+<footer class="lugid-footer">
+	
 </footer>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script type="text/javascript" src="libs/stellar/jquery.stellar.min.js"></script>
-<script type="text/javascript" src="js/scriptDark.js"></script>
 
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="libs/bootstrap4/bootstrap.js" ></script>
+<script src="js/script.js"></script>
 </body>
 </html>
