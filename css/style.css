@@ -29,6 +29,11 @@ h2 {
   color: #1a1a1a;
 }
 
+input, textarea {
+  box-sizing: border-box;
+  border: none;
+}
+
 .span-blue {
   display: block;
   font-family: 'Source Sans Pro', sans-serif;
@@ -324,6 +329,7 @@ h2 {
 .lucid-testimonials .lucid-carusel .carousel-indicators .active {
   width: 15px;
   height: 15px;
+  background-color: #008ed6;
 }
 
 .lucid-testimonials .lucid-carusel .wrap-carousel {
@@ -418,6 +424,10 @@ h2 {
   color: #fff;
 }
 
+.lucid-pricings__card {
+  margin: 0 auto 15px auto;
+}
+
 .lucid-pricings__card b {
   display: block;
   font-size: 24px;
@@ -503,6 +513,111 @@ h2 {
 }
 
 /*===============================================*/
+.lucid-contact {
+  background-color: #ededed;
+  text-align: center;
+  padding: 60px 0;
+}
+
+.lucid-contact h2 {
+  padding: 0 0 77px 0;
+}
+
+.lucid-contact img {
+  margin-bottom: 30px;
+}
+
+.lucid-contact__wrap {
+  padding: 0 0 15px 0;
+}
+
+.lugid-footer {
+  background-color: #000;
+  padding: 70px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.lugid-footer img {
+  margin: 0 15px;
+  transition: .2s;
+  border-radius: 5px;
+}
+
+.lugid-footer img:hover {
+  box-shadow: 0 0 10px #008ece;
+  cursor: pointer;
+  transform: rotate(360deg);
+}
+
+.lucid-popap {
+  z-index: 999;
+  display: none;
+  background-color: rgba(0, 142, 214, 0.5);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.lucid-popap form {
+  padding: 60px;
+  position: absolute;
+  display: flex;
+  background-color: #000;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.lucid-popap form .input-wrap {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.lucid-popap form textarea {
+  height: 208px;
+  width: 300px;
+  background: none;
+  color: white;
+  font-size: 14px;
+  line-height: 14px;
+  padding: 20px;
+  border: 1px solid #444348;
+  border-radius: 5px;
+}
+
+.lucid-popap form input {
+  border: 1px solid #444348;
+  border-radius: 5px;
+  padding: 20px;
+  width: 300px;
+  font-size: 14px;
+  line-height: 14px;
+  margin-bottom: 20px;
+  color: white;
+  background: none;
+}
+
+.lucid-popap form img {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: -13px;
+  right: -20px;
+  background: linear-gradient(0deg, #22c1c3 0%, #008ed6 100%);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.lucid-popap.open {
+  display: block;
+}
+
 .red {
   background-color: red;
 }
