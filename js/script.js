@@ -30,6 +30,21 @@
 	cross.addEventListener('click',closs);
 })();
 
+//////////////////////////////////scroll arrow
+
+(()=>{
+	let arrowTop = document.querySelector('.arrowTop');
+
+	arrowTop.addEventListener('click',()=>{
+		window.scrollTo(pageXOffset,0);
+	});
+
+	window.addEventListener('scroll',()=>{
+		arrowTop.hidden = (pageYOffset < document.documentElement.clientHeight);
+	});
+	
+
+})();
 
 
 
