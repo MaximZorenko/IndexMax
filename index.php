@@ -5,7 +5,7 @@
 	//выборка с поля input1
 	$selectInput1 = "SELECT `input1` FROM `testajax` WHERE id = 1 ";
 	$res_selectInput1 = mysqli_query($link,$selectInput1);//отсылаю запрос
-		$dataSelectInput1 = mysqli_fetch_all($res_selectInput1, MYSQLI_ASSOC);//
+	$dataSelectInput1 = mysqli_fetch_all($res_selectInput1, MYSQLI_ASSOC);//
 	$postMessageInput1 = $dataSelectInput1[0]['input1'];
 	
 
@@ -27,30 +27,35 @@
 
 </head>
 <body>
-	<?php 
-	// echo '<pre>' . print_r($_POST,true) . '</pre>';
-	 ?>
+
 	<div id="response"></div>
-<!-- 	<form action="" name="ourForm">
-		<input type="text" name="ourForm_inp">
-		<button type="submit" name="ourForm_btn">Отправить</button>
-	</form> -->
+	<button type="button" class="addNewTodoList">addNewTodoList</button>
+	<div class="wrapTodoList">
+
+<!-- 		<div class="wrapTodoList__new">
+			<form action="" name="ourForm">
+				<input type="text" name="message" class="message">
+				<input type='submit' name="add" class="add" value="Отправить">
+			</form>
+			<ul class="todo"></ul>
+		</div> -->
+
+	</div>
 
 
-	<form action="" name="ourForm">
-		<input type="text" name="message" class="message">
-		<input type='submit' name="add" class="add" value="Отправить">
-	</form>
 
-	<ul class="todo"></ul>
+	
 
 
 
-	<script src="scriptTEst1.js"></script>
+	
 	<script src="scriptTodo.js"></script>
+	<script src="scriptTEst1.js"></script>
 		<script>
-		array = <?php if($postMessageInput1){print_r($postMessageInput1);} ?>;
-		show();
+			if(document.querySelector('.wrapTodoList__new')){
+					array = <?php if($postMessageInput1){print_r($postMessageInput1);} ?>;
+				show();
+			}
 	</script>
 </body>
 </html>
