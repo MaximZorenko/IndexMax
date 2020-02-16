@@ -47,15 +47,13 @@
 	
 
 
-
 	
 	<script src="scriptTodo.js"></script>
-	<script src="scriptTEst1.js"></script>
-		<script>
-			if(document.querySelector('.wrapTodoList__new')){
-					array = <?php if($postMessageInput1){print_r($postMessageInput1);} ?>;
-				show();
-			}
+	<script>
+<?php if($postMessageInput1){ ?>
+	arrayNewTodo = <?php if($postMessageInput1){print_r($postMessageInput1);} ?>;
+	showTodoList(arrayNewTodo);
+<? } ?>		
 	</script>
 </body>
 </html>
