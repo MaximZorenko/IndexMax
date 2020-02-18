@@ -3,23 +3,50 @@ let servResponse = document.querySelector('#response');
 let addNewTodoList = document.querySelector('.addNewTodoList'),
 		wrapTodoList = document.querySelector('.wrapTodoList'),
 		arrayNewTodo = [];
-		
-addNewTodoList.addEventListener('click',()=>{
-	let newForm = {
-		id: arrayNewTodo.length,
-		arr: [], 
-	};
-	arrayNewTodo.push(newForm);
-	showTodoList(arrayNewTodo);
-});
 
+addNewTodoList.addEventListener('click',()=>{
+	let elem = document.createElement('form');
+			elem.setAttribute('name','formNameTodo');
+	let label = document.createElement('label');
+			label.innerHTML = 'Name Todo List';		
+	let input = document.createElement('input');
+			input.setAttribute('type','text');
+			input.setAttribute('name','nameTodo')
+
+	let button = document.createElement('input');
+			button.setAttribute('type', 'submit');
+	label.appendChild(input);
+	elem.appendChild(label);
+	elem.appendChild(button);
+	wrapTodoList.insertAdjacentElement('afterBegin',elem);
+	document.forms.formNameTodo.addEventListener('submit',e=>{
+		e.preventDefault();
+
+		let newForm = {
+			id: arrayNewTodo.length,
+			nameTodo: document.querySelector('input[name=nameTodo]').value,
+			arr: [], 
+		};
+		arrayNewTodo.push(newForm);
+		showTodoList(arrayNewTodo);
+		ajaxInquiry(arrayNewTodo);					
+	});
+});
 
 function showTodoList(arrayNewTodo){
 	let elem = document.createElement('div');
 	arrayNewTodo.forEach((item,i)=>{
 		let wrapTodoList__new = document.createElement('div');
 		wrapTodoList__new.setAttribute('class','wrapTodoList__new');
-
+		let divH2 = document.createElement('div');
+				divH2.setAttribute('class', 'wrapTodoList__newH');
+		let h2 = document.createElement('h2');
+		h2.innerHTML = item.nameTodo;
+		let buttonDivH2 = document.createElement('button');
+				buttonDivH2.setAttribute('type','button');
+				buttonDivH2.setAttribute('data-button-Deldiv',`${item.nameTodo}`);
+				buttonDivH2.setAttribute('value','deletNewTodo');
+				buttonDivH2.innerHTML = 'Удалить';//убрать - заменить на картинку		
 		let ourForm = document.createElement('form');
 		ourForm.setAttribute('name',`ourForm${item.id}`);
 
@@ -77,6 +104,9 @@ function showTodoList(arrayNewTodo){
 
 		ourForm.appendChild(inputText);
 		ourForm.appendChild(inputSubmit);
+		divH2.appendChild(h2);
+		divH2.appendChild(buttonDivH2);
+		wrapTodoList__new.appendChild(divH2);
 		wrapTodoList__new.appendChild(ourForm);
 		wrapTodoList__new.appendChild(ulTodo);
 		elem.appendChild(wrapTodoList__new);
@@ -86,6 +116,16 @@ function showTodoList(arrayNewTodo){
 	wrapTodoList.innerHTML = elem.innerHTML;
 	
 	arrayNewTodo.forEach((item,i)=>{
+		wrapTodoList.addEventListener('click',e=>{
+			if(e.target.value==='deletNewTodo'){
+				for(let i = 0; i < arrayNewTodo.length; i++){
+						if(arrayNewTodo[i].nameTodo===e.target.dataset.buttonDeldiv){
+							arrayNewTodo.splice(i,1);
+						}
+				}
+			ajaxInquiry(arrayNewTodo);
+			}
+		});
 		let message = document.querySelector(`input[name=message${item.id}]`),
 				todo = Array.prototype.slice.call(document.querySelectorAll('.todo'))[i];
 		
