@@ -2,52 +2,40 @@
 	include 'connect.php';
 	include 'functions.php';
 
-	//выборка с поля input1
 	$selectInput1 = "SELECT `input1` FROM `testajax` WHERE id = 1 ";
-	$res_selectInput1 = mysqli_query($link,$selectInput1);//отсылаю запрос
-	$dataSelectInput1 = mysqli_fetch_all($res_selectInput1, MYSQLI_ASSOC);//
+	$res_selectInput1 = mysqli_query($link,$selectInput1);
+	$dataSelectInput1 = mysqli_fetch_all($res_selectInput1, MYSQLI_ASSOC);
 	$postMessageInput1 = $dataSelectInput1[0]['input1'];
-	
-
-	// $insert3 = "SELECT `input1` FROM `testajax` WHERE id = 1 ";
-	// $res_isert = mysqli_query($link,$insert3);//отсылаю запрос
-	// $data = mysqli_fetch_all($res_isert, MYSQLI_ASSOC);//восзврат массива БД
-	// // print_r($data[0]['input1']);
-	// $result = $data[0]['input1'];
-	// echo $result;
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>SIMPLE TODO LISTS</title>
 	<link rel="stylesheet" href="style.css">
-	
-
+	<style type="text/css">
+		body{
+			margin: 0;
+			padding: 0;
+			height: 100vh;
+			font-family: 'Open Sans', sans-serif;
+			background: linear-gradient(to top, #cf8814 40%, #cbcab4 60%);
+		}
+		button,input[type=submit],input[type=checkbox]{
+			cursor: pointer;
+		}
+	</style>
 </head>
 <body>
-
-	<div id="response"></div>
-	<button type="button" class="addNewTodoList">addNewTodoList</button>
-	<div class="wrapTodoList">
-
-<!-- 		<div class="wrapTodoList__new">
-			<form action="" name="ourForm">
-				<input type="text" name="message" class="message">
-				<input type='submit' name="add" class="add" value="Отправить">
-			</form>
-			<ul class="todo"></ul>
-		</div> -->
-
-	</div>
-
-
-
+	<section>
+		<h1>SIMPLE TODO LISTS</h1>
+		<span>from ruby garge</span>
+		<div class="wrapTodoList">
+		</div>
+		<button type="button" class="addNewTodoList">Add TODO List</button>
+	</section>
 	
 
-
-	
 	<script src="scriptTodo.js"></script>
 	<script>
 <?php if($postMessageInput1){ ?>

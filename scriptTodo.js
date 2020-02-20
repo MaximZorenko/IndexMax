@@ -11,14 +11,15 @@ addNewTodoList.addEventListener('click',()=>{
 			label.innerHTML = 'Name Todo List';		
 	let input = document.createElement('input');
 			input.setAttribute('type','text');
-			input.setAttribute('name','nameTodo')
+			input.setAttribute('name','nameTodo');
 
 	let button = document.createElement('input');
 			button.setAttribute('type', 'submit');
+			button.setAttribute('value','addNewTodoList');
 	label.appendChild(input);
 	elem.appendChild(label);
 	elem.appendChild(button);
-	wrapTodoList.insertAdjacentElement('afterBegin',elem);
+	wrapTodoList.insertAdjacentElement('beforeEnd',elem);
 	document.forms.formNameTodo.addEventListener('submit',e=>{
 		e.preventDefault();
 
@@ -28,6 +29,9 @@ addNewTodoList.addEventListener('click',()=>{
 			arr: [], 
 		};
 		arrayNewTodo.push(newForm);
+		arrayNewTodo.forEach((item,i)=>{
+			item.id = i;
+		});
 		showTodoList(arrayNewTodo);
 		ajaxInquiry(arrayNewTodo);					
 	});
@@ -46,9 +50,10 @@ function showTodoList(arrayNewTodo){
 				buttonDivH2.setAttribute('type','button');
 				buttonDivH2.setAttribute('data-button-Deldiv',`${item.nameTodo}`);
 				buttonDivH2.setAttribute('value','deletNewTodo');
-				buttonDivH2.innerHTML = 'Удалить';//убрать - заменить на картинку		
+				buttonDivH2.setAttribute('class','btnDeletH');
 		let ourForm = document.createElement('form');
 		ourForm.setAttribute('name',`ourForm${item.id}`);
+		ourForm.setAttribute('class','ourForm');
 
 		let inputText = document.createElement('input');
 		inputText.setAttribute('type','text');
@@ -59,45 +64,49 @@ function showTodoList(arrayNewTodo){
 		inputSubmit.setAttribute('type', 'submit');
 		inputSubmit.setAttribute('name', 'add');
 		inputSubmit.setAttribute('class', 'add');
-		inputSubmit.setAttribute('value', 'Отправить');
+		inputSubmit.setAttribute('value', 'Add Task');
 
 		let ulTodo = document.createElement('ul');
 		ulTodo.setAttribute('class','todo');
 		let elemUlTodo = document.createElement('ul');
 		item.arr.forEach((item,i)=>{
 			let li = document.createElement('li');
+			
+			let inputWrap = document.createElement('div');
+			inputWrap.setAttribute('class','inputWrap');
 			let input = document.createElement('input');
 			input.setAttribute('type','checkbox');
 			input.setAttribute('id',`input1_${i}`);
 			if(item.checked === true){
 			input.setAttribute('checked','checked');
-			}else{input.checked = false}
+			inputWrap.classList.add('chec');
+			}else{input.checked = false; inputWrap.classList.remove('chec');}
+			inputWrap.appendChild(input);
 			let label = document.createElement('label');
 			label.innerHTML = item.value;
 			label.setAttribute('for',`input1_${i}`)
-			if(item.bold === true){
-				label.classList.add('bold');
-			}else{label.classList.remove('bold');}
 			let buttonDelet = document.createElement('button');
 			buttonDelet.setAttribute('type','button');
 			buttonDelet.setAttribute('data-button-Delet',`${item.value}`);
 			buttonDelet.setAttribute('value','delet');
-			buttonDelet.innerHTML = 'Удалить';//убрать - заменить на картинку
 			let buttonHigherPriority = document.createElement('button');
 			buttonHigherPriority.setAttribute('type','button');
-			buttonHigherPriority.innerHTML = '+';
+			buttonHigherPriority.innerHTML = '&#9650;';
 			buttonHigherPriority.setAttribute('value','higherPriority');
 			buttonHigherPriority.setAttribute('data-button-Priority',`${item.value}`);
 			let buttonLowerPriority = document.createElement('button');
 			buttonLowerPriority.setAttribute('type','button');
-			buttonLowerPriority.innerHTML = '-';
+			buttonLowerPriority.innerHTML = '&#9660;';
 			buttonLowerPriority.setAttribute('value','lowerPriority');
 			buttonLowerPriority.setAttribute('data-button-Lower',`${item.value}`);
-			li.appendChild(input);
+			let buttonPriorWrap = document.createElement('div');
+			buttonPriorWrap.setAttribute('class','buttonPriorWrap');
+			buttonPriorWrap.appendChild(buttonHigherPriority);
+			buttonPriorWrap.appendChild(buttonLowerPriority);
+			li.appendChild(inputWrap);
 			li.appendChild(label);
+			li.appendChild(buttonPriorWrap);
 			li.appendChild(buttonDelet);
-			li.appendChild(buttonHigherPriority);
-			li.appendChild(buttonLowerPriority);
 			elemUlTodo.appendChild(li);							
 		});
 		ulTodo.innerHTML = elemUlTodo.innerHTML;
@@ -133,8 +142,7 @@ function showTodoList(arrayNewTodo){
 			e.preventDefault();
 			let newMessage = {
 				value: message.value,
-				checked: false,
-				bold: false
+				checked: false
 			};
 			item.arr.push(newMessage);
 			ajaxInquiry(arrayNewTodo);
