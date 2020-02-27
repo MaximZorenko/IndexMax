@@ -1,4 +1,14 @@
 <?php
+	session_start();
+	if($_GET['do']=='logout'){
+		unset($_SESSION['admin']);
+		session_destroy();
+	}
+	if(!$_SESSION['admin']){
+		header("Location: enter.php");
+		exit;
+	}
+// echo md5(123);
 	include 'connect.php';
 	include 'functions.php';
 
@@ -35,6 +45,7 @@
 		<button type="button" class="addNewTodoList">Add TODO List</button>
 	</section>
 	
+	<a href="index.php?do=logout">Выход</a>
 
 	<script src="scriptTodo.js"></script>
 	<script>
