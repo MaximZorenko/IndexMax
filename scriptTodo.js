@@ -22,18 +22,19 @@ addNewTodoList.addEventListener('click',()=>{
 	wrapTodoList.insertAdjacentElement('beforeEnd',elem);
 	document.forms.formNameTodo.addEventListener('submit',e=>{
 		e.preventDefault();
-
-		let newForm = {
+		if(document.querySelector('input[name=nameTodo]').value){
+			let newForm = {
 			id: arrayNewTodo.length,
 			nameTodo: document.querySelector('input[name=nameTodo]').value,
 			arr: [], 
-		};
-		arrayNewTodo.push(newForm);
-		arrayNewTodo.forEach((item,i)=>{
-			item.id = i;
-		});
-		showTodoList(arrayNewTodo);
-		ajaxInquiry(arrayNewTodo);					
+			};
+			arrayNewTodo.push(newForm);
+			arrayNewTodo.forEach((item,i)=>{
+				item.id = i;
+			});
+			showTodoList(arrayNewTodo);
+			ajaxInquiry(arrayNewTodo);	
+		}		
 	});
 });
 
@@ -52,7 +53,7 @@ function showTodoList(arrayNewTodo){
 				buttonDivH2.setAttribute('value','deletNewTodo');
 				buttonDivH2.setAttribute('class','btnDeletH');
 		let ourForm = document.createElement('form');
-		ourForm.setAttribute('name',`ourForm${item.id}`);
+		ourForm.setAttribute('name','ourForm');
 		ourForm.setAttribute('class','ourForm');
 
 		let inputText = document.createElement('input');
@@ -138,14 +139,16 @@ function showTodoList(arrayNewTodo){
 		let message = document.querySelector(`input[name=message${item.id}]`),
 				todo = Array.prototype.slice.call(document.querySelectorAll('.todo'))[i];
 		
-		document.forms[i].addEventListener('submit', e => {
+		document.querySelectorAll('[name=ourForm]')[i].addEventListener('submit', e => {
 			e.preventDefault();
+			if(message.value){
 			let newMessage = {
 				value: message.value,
 				checked: false
 			};
 			item.arr.push(newMessage);
 			ajaxInquiry(arrayNewTodo);
+			}
 		});
 
 		todo.addEventListener('change', function(e){
@@ -201,6 +204,7 @@ function showTodoList(arrayNewTodo){
 
 }
  	
+
 function ajaxInquiry(array){
 	let a = JSON.stringify(array);
 	let xhr = new XMLHttpRequest();
