@@ -1,0 +1,307 @@
+body{background: linear-gradient(to top, #cf8814 40%, #cbcab4 60%) no-repeat;display:flex;flex-direction:column;align-items:center;padding:0;margin:0;font-family: 'Open Sans', sans-serif;}
+.wrap{
+	width: 700px;
+	min-height: 72vh;
+}
+.form{
+	display: none;
+}
+.wrap_project{
+	margin-bottom: 40px;
+}
+.wrapTask form{
+	display: flex;
+	align-items: center;
+
+}
+.hide{
+	display: none;
+}
+.open{
+	display: flex;
+}
+header{
+	display: flex;
+	align-items: center;
+	align-self: stretch;
+	justify-content: flex-start;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 15px;
+	color: #000;
+	font-weight:300; 
+}
+header a{
+	text-decoration: none;
+	margin: 5px;
+	color: #fff;
+	font-weight: 700;
+	font-size: 16px;
+	transition: .2s;
+}
+header a:hover{
+	color: #5181c0;
+}
+header input[name=loguot]{
+	margin: 5px;
+	padding: 0;
+	color: #fff;
+	font-weight: 700;
+	font-size: 16px;
+	border: none;
+	background: none;
+	cursor: pointer;
+	transition: .2s;
+}
+header input[name=loguot]:hover{
+	color: #5181c0;
+}
+header .spanLogin{
+	margin: 5px;
+	margin-left: auto;
+	padding: 0;
+	color: #fff;
+	font-weight: 700;
+	font-size: 16px;
+	color: red;
+	text-shadow: 2px 2px 3px red; 
+	font-family: 'Open Sans', sans-serif;
+}
+.formTask{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	background-color: #d1d1d1;
+	position: relative;
+	border: 1px solid #b3b3a3;
+}
+.formTask::after{
+	content: '';
+	position: absolute;
+	width: 698px;
+	height: 50px;
+	top: 0;
+	left: -1px;
+	border: 1px solid #315589;
+	background:url(img/icons22.png) no-repeat 658px 16px,url(img/icons.png) no-repeat 12px 12px,url(img/fon1.png);
+}
+.formTask::before{
+	content: url(img/iconsPlus.png);
+	position: absolute;
+	bottom: 15px;
+	left: 12px;
+}
+.formTask input[name=task]{
+	width: 506px;
+	padding: 11px 12px;
+	margin: 10px 0 10px 50px;
+	font-size: 14px;
+	color: #bbbbbb;
+	border: none;
+	border-top: 1px solid #707070;
+}
+.formTask input[type=submit]{
+	background-color: #70a789;
+	border: 1px solid #447557;
+	border-radius: 0 5px 5px 0;
+	color: #fff;
+	padding: 10.5px 20px;
+	font-size: 14px;
+	font-weight: 700;
+	cursor: pointer;
+}
+.formTask input[name=deletProject]{
+	background: url(img/fonCar.png) no-repeat center;
+	width: 20px;
+	height: 20px;
+	border: none;
+	cursor: pointer;
+	position: absolute;
+	right: 12px;
+	top: 14px;
+	z-index: 1;
+}
+.formTask input[name=correctProject]{
+	background: url(img/icon3.png) no-repeat center;
+	width: 20px;
+	height: 20px;
+	border: none;
+	cursor: pointer;
+	position: absolute;
+	right: 52px;
+	top: 14px;
+	z-index: 1;
+}
+.formTask h2{
+	position: relative;
+	z-index: 1;
+	margin: 0;
+	padding: 14px 0 14px 50px;
+	width: 100%;
+	font-size: 16px;
+	color: #fff;
+	font-weight: 700;
+}
+.formTask input[name=newValueProject]{
+	width: 506px;
+	padding: 11px 12px;
+	margin: 5px 0 5px 50px;
+	font-size: 14px;
+	color: #bbbbbb;
+	border: none;
+	border-top: 1px solid #707070;
+	position: relative;
+	z-index: 1;
+}
+.wrapTask{
+	border: 1px solid #b3b3a3;
+	border-top: none;
+	border-radius: 0 0 15px 15px;
+}
+
+.formTaskElement{
+	display: flex;
+	position: relative;
+	padding: 15px 12px;
+	border-top: 1px solid #e7ebea;
+	background: url(img/linPink.png) no-repeat 40px,url(img/linPink.png) no-repeat 45px,url(img/lin.png) no-repeat 580px,#fff;
+	/*transition: all .2s;*/
+}
+.formTaskElement:last-child{
+	border-radius: 0 0 15px 15px;
+}
+.formTaskElement:hover{
+	background: url(img/linPink.png) no-repeat 40px,url(img/linPink.png) no-repeat 45px,url(img/lin.png) no-repeat 580px,url(img/linSm.png) no-repeat 620px,url(img/linSm.png) no-repeat 658px, #fcfed5;
+}
+.formTaskElement input[type=checkbox]{
+	cursor: pointer;
+}
+.formTaskElement p{
+	margin: 0;
+	margin-right: auto;
+	margin-left: 30px;
+	font-size: 14px;
+	color: #999999;
+}
+.formTaskElement input[name=correctTask]{
+	border: none;
+	background: url(img/icon4.png) no-repeat center;
+	width: 12px;
+	height: 12px;
+	cursor: pointer;
+	margin-right: 26px;
+	opacity: 0;
+	transition: opacity .2s;
+}
+.formTaskElement:hover input[name=correctTask]{
+	opacity: 1;
+}
+.formTaskElement input[name=deletTask]{
+	border: none;
+	background: url(img/fonCarTask.png) no-repeat center;
+	width: 12px;
+	height: 12px;
+	cursor: pointer;
+	opacity: 0;
+	transition: all .2s;
+}
+.formTaskElement:hover input[name=deletTask]{
+	opacity: 1;
+}
+.formTaskElement input[name=submitNewValueTask]{
+	margin-right: auto;
+	padding: 2.5px 5px;
+	border: 1px solid #b3b3a3;
+	border-radius: 0 5px 5px 0;
+	color: #fff;
+	cursor: pointer;
+	background-color: #d3d3d3;
+}
+.formTaskElement input[name=newValueTask]{
+	margin-left: 18px;
+	padding: 2px 12px;
+	font-size: 14px;
+	color: #bbbbbb;
+	border: 1px solid #b3b3a3;
+	width: 450px;
+}
+.formTaskElement input[name=next]{
+	position: absolute;
+	right: 85px;
+	top: 2px;
+	border: none;
+	height: 20px;
+	width: 20px;
+	background: url(img/next.png) no-repeat center bottom;
+	cursor: pointer;
+	opacity: 0;
+	transition: all .2s;
+}
+.formTaskElement:hover input[name=next]{
+	opacity: 1;
+}
+.formTaskElement input[name=prev]{
+	position: absolute;
+	right: 86px;
+	bottom: 2px;
+	border: none;
+	height: 20px;
+	width: 20px;
+	background: url(img/prev.png) no-repeat center top;
+	cursor: pointer;
+	padding-top: 20px;
+	opacity: 0;
+	transition: all .2s;
+}
+.formTaskElement:hover input[name=prev]{
+	opacity: 1;
+}
+.btn{
+	margin: 0;
+	padding: 14px 30px 14px 45px;
+	font-size: 16px;
+	color: #fff;
+	font-weight: 700;
+	border: 1px solid #315589;
+	border-radius: 2px;
+	background: url(img/Plus.png) no-repeat 10px center,url(img/fon1.png);
+	cursor: pointer;
+}
+#formAddTodoList input[name=submit]{
+	padding: 2.5px 5px;
+	margin-bottom: 26px;
+	border: 1px solid #b3b3a3;
+	border-radius: 0 5px 5px 0;
+	color: #fff;
+	cursor: pointer;
+	background-color: #d3d3d3;
+}
+#formAddTodoList input[name=project]{
+	padding: 2px 12px;
+	margin-bottom: 26px;
+	font-size: 14px;
+	color: #bbbbbb;
+	border: 1px solid #b3b3a3;
+	width: 450px;
+}
+.title{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-bottom: 50px;
+}
+.title h1{
+	padding: 0;
+	margin: 0;
+}
+.todo__registration{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100vh;
+}
+.todo__login{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100vh;
+}
