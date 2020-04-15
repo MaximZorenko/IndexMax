@@ -1,7 +1,5 @@
 <?php
 session_start();
-require_once 'install.php';
-include 'config.php';
 header("Content-Type:text/html;charset=utf8");
 require_once 'model/Model.php';
 require_once 'controller/AController.php';
@@ -29,4 +27,13 @@ else{
 }
 
 echo $init->getBody();
+
+
+
+
+
+
+
+
+
 ?>

@@ -139,6 +139,7 @@ function ajaxPrev(prev,task_id,wrap){
 		if(xhr.readyState === 4 && xhr.status === 200){
 			let server = xhr.response;
 			wrap.innerHTML = server;
+			console.log(server);
 		}
 	});
 }

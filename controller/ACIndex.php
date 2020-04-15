@@ -12,7 +12,7 @@ class ACIndex extends AController{
 			if(isset($_SESSION['sess'])){
 				$user = $this->db->funcUser($_SESSION['sess']);
 			}
-			$msg = $this->db->functProject($_POST,$user['id']);
+			$msg = $this->db->functProject($_POST,$user);
 			exit($msg);
 		}
 		if($_POST['task']){
@@ -71,7 +71,7 @@ class ACIndex extends AController{
 		}
 		if(isset($_SESSION['sess'])){
 			$user = $this->db->funcUser($_SESSION['sess']);
-			$text = $this->db->funcAddMess($user['id']);
+			$text = $this->db->funcAddMess($user);
 		}
 
 		return $this->render('index',$text);
