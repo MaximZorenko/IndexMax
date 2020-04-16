@@ -1,4 +1,5 @@
 <?php
+namespace controller;
 class ACRegistration extends AController{
 	
 	public $init;

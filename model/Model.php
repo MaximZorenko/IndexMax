@@ -1,27 +1,29 @@
 <?php
+namespace model;///усли в папкето classes\model
+use \PDO;
 class Model{
 	public $db;
 
-	public function __construct($host_user_pass_db){
-		$url = parse_url(getenv($host_user_pass_db));
-		try{
-		$this->db = new PDO("pgsql:" . sprintf(
-		    "host=%s;port=%s;user=%s;password=%s;dbname=%s",
-		    $url["host"],
-		    $url["port"],
-		    $url["user"],
-		    $url["pass"],
-		    ltrim($url["path"], "/")
-		));
-		} catch (PDOException $e) {
-		    echo 'Подключение не удалось: ' . $e->getMessage();
-		}
-
+	public function __construct($host_db,$user,$pass){
+		// $url = parse_url(getenv($host_user_pass_db));
 		// try{
-		// $this->db = new PDO($host,$user,$pass);
+		// $this->db = new PDO("pgsql:" . sprintf(
+		//     "host=%s;port=%s;user=%s;password=%s;dbname=%s",
+		//     $url["host"],
+		//     $url["port"],
+		//     $url["user"],
+		//     $url["pass"],
+		//     ltrim($url["path"], "/")
+		// ));
 		// } catch (PDOException $e) {
 		//     echo 'Подключение не удалось: ' . $e->getMessage();
 		// }
+
+		try{
+		$this->db = new PDO($host_db,$user,$pass);
+		} catch (PDOException $e) {
+		    echo 'Подключение не удалось: ' . $e->getMessage();
+		}
 		return $this->db;
 	}
 

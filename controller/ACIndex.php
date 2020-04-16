@@ -1,4 +1,6 @@
 <?php
+namespace controller; 
+
 class ACIndex extends AController{
 	
 	public function getBody(){

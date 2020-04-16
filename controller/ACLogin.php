@@ -1,4 +1,6 @@
 <?php
+namespace controller;
+
 class ACLogin extends AController{
 	public function getBody(){
 		parent::getBody();

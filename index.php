@@ -1,13 +1,17 @@
 <?php
 session_start();
 header("Content-Type:text/html;charset=utf8");
-require_once 'model/Model.php';
-require_once 'controller/AController.php';
-require_once 'controller/ACIndex.php';
-require_once 'controller/ACRegistration.php';
-require_once 'controller/ACLogin.php';
-
+use controller\{ACIndex,ACRegistration,ACLogin};
+spl_autoload_register('autoloadClass');
+function autoloadClass($class){
+	$class = str_replace("\\", "/",$class);
+	$file = __DIR__."/{$class}.php";
+	if(file_exists($file)){
+		require_once $file;
+	}
+}
  
+
 if(isset($_GET['action'])){
 	switch ($_GET['action']) {
 		case 'registration':
