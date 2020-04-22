@@ -1,39 +1,50 @@
 “ехнические требовани€ SQL запросы:
-- получить все статусы, не повтор€€, в алфавитном пор€дке
-SELECT DISTINCT status FROM tasks;
+1) получить все статусы, не повтор€€, в алфавитном пор€дке
+"SELECT DISTINCT status FROM tasks ORDER BY status ASC";
 
-- получить счетчик всех задач в каждом проекте, упор€дочить по количеству задач
+2) получить счетчик всех задач в каждом проекте, упор€дочить по количеству задач
 по убыванию
-SELECT COUNT(id) AS c,project_id FROM tasks GROUP BY project_id ORDER BY c DESC;
+"SELECT projects.NAME, COUNT(tasks.id) as count_task
+	FROM projects JOIN tasks ON projects.id = tasks.project_id
+	GROUP BY projects.name ORDER BY COUNT(tasks.id) DESC";
 
-- получить счет всех заданий в каждом проекте, упор€дочить по проектам
+3) получить счет всех заданий в каждом проекте, упор€дочить по проектам
 имена
-SELECT COUNT(tasks.id), tasks.project_id, projects.name FROM projects JOIN tasks ON projects.id = tasks.project_id GROUP BY tasks.project_id; 
+"SELECT projects.NAME, COUNT(tasks.id) as count_task
+	FROM projects JOIN tasks ON projects.id = tasks.project_id
+	GROUP BY projects.name ORDER BY projects.name ASC";
 
-- получить задани€ дл€ всех проектов, название которых начинаетс€ с
+4) получить задани€ дл€ всех проектов, название которых начинаетс€ с
 Ѕуква "N"
-SELECT name FROM tasks WHERE name LIKE 'N%'; 
+"SELECT tasks.NAME, projects.NAME 
+	FROM tasks JOIN projects ON tasks.project_id = projects.id
+	WHERE projects.name LIKE 'N%'";
 
-- получить список всех проектов, содержащих букву Ђаї в середине
+5) получить список всех проектов, содержащих букву Ђаї в середине
 им€ и показать количество задач р€дом с каждым проектом. ”поминание
 что могут существовать проекты без задач и задач с
 project_id = NULL
-COUNT(tasks.id), tasks.project_id, projects.NAME 
-FROM projects JOIN tasks ON projects.id = tasks.project_id GROUP BY tasks.project_id 
-HAVING projects.NAME LIKE '%A%'; 
+"SELECT projects.NAME, COUNT(tasks.id) as count_task
+	FROM projects JOIN tasks ON projects.id = tasks.project_id
+	GROUP BY projects.name
+	HAVING projects.name LIKE '%a%'";
 
 
-- получить список задач с повтор€ющимис€ именами. «аказ по алфавиту
-SELECT COUNT(name),NAME FROM tasks GROUP BY name HAVING COUNT(*) > 1;
+6) получить список задач с повтор€ющимис€ именами. «аказ по алфавиту
+"SELECT COUNT(name),NAME 
+	FROM tasks GROUP BY name HAVING COUNT(*) > 1 ORDER BY name ASC";
 
-- получить список задач, имеющих несколько точных совпадений как по названию, так и по
+7) получить список задач, имеющих несколько точных совпадений как по названию, так и по
 статус, из проекта Ђ√аражї. —ортировать по количеству матчей
-SELECT NAME FROM tasks GROUP BY name HAVING COUNT(STATUS) > 1 AND COUNT(NAME) > 1;
+"SELECT NAME 
+	FROM tasks 
+	WHERE NAME LIKE '%test1%' AND STATUS LIKE 'checked'";
 
 
-- получить список имен проектов, имеющих более 10 задач в статусе
+8) получить список имен проектов, имеющих более 10 задач в статусе
 Ђ«авершеної. —ортировать по project_id}
-SELECT 
-COUNT(tasks.id), tasks.status, tasks.project_id, projects.NAME 
-FROM projects JOIN tasks ON projects.id = tasks.project_id GROUP BY tasks.project_id 
-HAVING COUNT(tasks.id) > 10 AND  tasks.STATUS IS NOT NULL;
+"SELECT projects.NAME
+	FROM projects JOIN tasks ON projects.id = tasks.project_id
+	GROUP BY projects.id
+	HAVING COUNT(tasks.status) >10
+	ORDER BY projects.id ASC";
